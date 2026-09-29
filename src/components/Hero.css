@@ -1,0 +1,979 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 72vh;
+    min-height: 560px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 18% 45%,
+            rgba(79, 140, 255, 0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 78% 35%,
+            rgba(118, 87, 217, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 88% 65%,
+            rgba(244, 154, 84, 0.12),
+            transparent 32%
+        ),
+        #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.hero-left {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   MAIN LUGGAGE
+========================= */
+
+.hero-luggage {
+    position: absolute;
+
+    height: 92%;
+    width: auto;
+    max-width: none;
+
+    left: 50%;
+    top: 4%;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 22px 25px rgba(30, 40, 80, 0.14));
+
+    z-index: 5;
+
+    animation: luggageFloat 5s ease-in-out infinite;
+
+    transition:
+        filter 0.4s ease;
+}
+
+.hero-luggage:hover {
+    filter:
+        drop-shadow(0 30px 35px rgba(30, 40, 80, 0.22));
+}
+
+
+@keyframes luggageFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-7px);
+    }
+}
+
+
+/* =========================
+   CHARACTER BASE
+========================= */
+
+.travel-character {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 6;
+
+    user-select: none;
+    pointer-events: none;
+
+    filter:
+        drop-shadow(0 12px 15px rgba(30, 40, 80, 0.10));
+}
+
+
+/* =========================
+   RUNNING CHARACTER
+========================= */
+
+.character-run {
+
+    width: 150px;
+
+    left: 2%;
+    top: 10%;
+
+    animation:
+        runFloat 4s ease-in-out infinite,
+        runTilt 4s ease-in-out infinite;
+}
+
+
+@keyframes runFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(12px, -8px);
+    }
+}
+
+
+@keyframes runTilt {
+
+    0%,
+    100% {
+        rotate: -2deg;
+    }
+
+    50% {
+        rotate: 3deg;
+    }
+}
+
+
+/* =========================
+   SHAKE CHARACTER
+========================= */
+
+.character-shake {
+
+    width: 175px;
+
+    left: 4%;
+    bottom: 7%;
+
+    animation: shakeMove 2.6s ease-in-out infinite;
+}
+
+
+@keyframes shakeMove {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    20% {
+        transform: translateX(-4px) rotate(-3deg);
+    }
+
+    40% {
+        transform: translateX(5px) rotate(3deg);
+    }
+
+    60% {
+        transform: translateX(-5px) rotate(-3deg);
+    }
+
+    80% {
+        transform: translateX(4px) rotate(2deg);
+    }
+}
+
+
+/* =========================
+   POINTING CHARACTER
+========================= */
+
+.character-point {
+
+    width: 175px;
+
+    right: 2%;
+    top: 17%;
+
+    animation: pointFloat 4.5s ease-in-out infinite;
+}
+
+
+@keyframes pointFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
+}
+
+
+/* =========================
+   CELEBRATING CHARACTER
+========================= */
+
+.character-pose {
+
+    width: 145px;
+
+    right: 6%;
+    bottom: 7%;
+
+    animation: poseJump 3.4s ease-in-out infinite;
+}
+
+
+@keyframes poseJump {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    40% {
+        transform: translateY(-14px) rotate(-3deg);
+    }
+
+    55% {
+        transform: translateY(-17px) rotate(3deg);
+    }
+
+    70% {
+        transform: translateY(-6px) rotate(-1deg);
+    }
+}
+
+
+/* =========================
+   PLANE
+========================= */
+
+.hero-plane {
+
+    position: absolute;
+
+    top: 7%;
+    left: 74px;
+
+    font-size: 30px;
+
+    color: #7657d9;
+
+    z-index: 8;
+
+    transform: rotate(-8deg);
+
+    animation: planeFly 8s ease-in-out infinite;
+}
+
+
+@keyframes planeFly {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+    }
+
+    25% {
+        transform:
+            translate(90px, -18px)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translate(180px, 4px)
+            rotate(-8deg);
+    }
+
+    75% {
+        transform:
+            translate(260px, -20px)
+            rotate(-4deg);
+    }
+
+    100% {
+        transform:
+            translate(350px, 0)
+            rotate(-8deg);
+    }
+}
+
+
+/* =========================
+   FLIGHT PATH
+========================= */
+
+.flight-path {
+
+    position: absolute;
+
+    width: 430px;
+    height: 100px;
+
+    left: -20px;
+    top: 5%;
+
+    border-top: 1px dashed rgba(118, 87, 217, 0.18);
+
+    border-radius: 50%;
+
+    transform: rotate(-4deg);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   DECORATIVE DOTS
+========================= */
+
+.travel-dot {
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    z-index: 3;
+
+    opacity: 0.8;
+}
+
+
+/* BLUE */
+
+.dot-blue {
+
+    left: 27%;
+    top: 22%;
+
+    background: #4f8cff;
+
+    animation: dotFloatOne 4s ease-in-out infinite;
+}
+
+
+/* PURPLE */
+
+.dot-purple {
+
+    left: 45%;
+    top: 32%;
+
+    background: #7657d9;
+
+    animation: dotFloatTwo 5s ease-in-out infinite;
+}
+
+
+/* PINK */
+
+.dot-pink {
+
+    left: 61%;
+    bottom: 17%;
+
+    background: #d66a9f;
+
+    animation: dotFloatOne 5.5s ease-in-out infinite;
+}
+
+
+/* ORANGE */
+
+.dot-orange {
+
+    right: 4%;
+    top: 45%;
+
+    background: #f49a54;
+
+    animation: dotFloatTwo 4.5s ease-in-out infinite;
+}
+
+
+@keyframes dotFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes dotFloatTwo {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(8px, -10px);
+    }
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.travel-star {
+
+    position: absolute;
+
+    z-index: 4;
+
+    font-size: 18px;
+
+    pointer-events: none;
+}
+
+
+.star-one {
+
+    left: 8%;
+    top: 34%;
+
+    color: #4f8cff;
+
+    animation: starSpin 5s linear infinite;
+}
+
+
+.star-two {
+
+    left: 58%;
+    top: 45%;
+
+    color: #f49a54;
+
+    animation: starSpin 6s linear infinite reverse;
+}
+
+
+.star-three {
+
+    left: 62%;
+    bottom: 17%;
+
+    color: #d66a9f;
+
+    animation: starPulse 2.5s ease-in-out infinite;
+}
+
+
+@keyframes starSpin {
+
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   RIGHT
+========================= */
+
+.hero-right {
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 35px 40px;
+
+    box-sizing: border-box;
+
+    transform: translateY(-15px);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   META
+========================= */
+
+.hero-meta {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+.hero-meta span:first-child {
+    color: #7657d9;
+}
+
+
+/* =========================
+   MASCOT
+========================= */
+
+.hero-mascot {
+
+    width: 82px;
+    height: 100px;
+
+    display: block;
+
+    object-fit: contain;
+
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(0 8px 12px rgba(20, 30, 60, 0.10));
+
+    animation: mascotFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes mascotFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero-right h1 {
+
+    margin: 0;
+
+    font-size: clamp(40px, 3.8vw, 60px);
+
+    font-weight: 700;
+
+    letter-spacing: 9px;
+
+    line-height: 1;
+}
+
+
+.hero-right h1 span {
+
+    letter-spacing: 0;
+
+    color: #7657d9;
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.hero-tagline {
+
+    margin: 18px 0 0;
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    color: #777;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.hero-divider {
+
+    width: 65px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f8cff,
+            #7657d9,
+            #d66a9f,
+            #f49a54
+        );
+
+    margin: 25px 0;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.hero-description {
+
+    margin: 0 0 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 4.5px;
+
+    color: #555;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.hero-button {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    min-width: 215px;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    background: #111;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hero-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f8cff,
+            #7657d9,
+            #d66a9f,
+            #f49a54
+        );
+
+    transform: translateX(-100%);
+
+    transition: transform 0.4s ease;
+
+    z-index: -1;
+}
+
+
+.hero-button:hover::before {
+    transform: translateX(0);
+}
+
+
+.hero-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(70, 70, 130, 0.18);
+}
+
+
+.hero-button span {
+
+    font-size: 16px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.hero-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   NEXT STOP
+========================= */
+
+.hero-next {
+
+    margin: 25px 0 0;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: #aaa;
+}
+
+
+.hero-next span {
+
+    color: #7657d9;
+
+    margin-left: 5px;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+
+        height: auto;
+
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* LEFT */
+
+    .hero-left {
+
+        height: 580px;
+    }
+
+
+    .hero-luggage {
+
+        height: 88%;
+
+        top: 5%;
+
+        left: 50%;
+    }
+
+
+    /* CHARACTERS */
+
+    .character-run {
+
+        width: 105px;
+
+        left: 1%;
+        top: 9%;
+    }
+
+
+    .character-shake {
+
+        width: 120px;
+
+        left: 1%;
+        bottom: 4%;
+    }
+
+
+    .character-point {
+
+        width: 120px;
+
+        right: 0;
+        top: 18%;
+    }
+
+
+    .character-pose {
+
+        width: 105px;
+
+        right: 2%;
+        bottom: 5%;
+    }
+
+
+    /* PLANE */
+
+    .hero-plane {
+
+        font-size: 24px;
+
+        top: 5%;
+        left: 30px;
+    }
+
+
+    .flight-path {
+
+        width: 280px;
+    }
+
+
+    /* RIGHT */
+
+    .hero-right {
+
+        min-height: 500px;
+
+        padding: 45px 20px 60px;
+
+        transform: none;
+    }
+
+
+    .hero-meta {
+
+        gap: 18px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-mascot {
+
+        width: 72px;
+        height: 90px;
+    }
+
+
+    .hero-right h1 {
+
+        font-size: 42px;
+
+        letter-spacing: 7px;
+    }
+
+
+    .hero-tagline {
+
+        font-size: 9px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .hero-description {
+
+        font-size: 9px;
+
+        letter-spacing: 3.5px;
+    }
+
+
+    .hero-next {
+
+        margin-top: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+}

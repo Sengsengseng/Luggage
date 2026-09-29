@@ -1,0 +1,19 @@
+.brand-statement {
+  width: 100%;
+  padding: 30px 5vw 80px;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.brand-statement-image {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.brand-statement-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

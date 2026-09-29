@@ -1,0 +1,1033 @@
+/* =====================================================
+   EASTSIDE CRAZY TRAVEL FOOTER
+===================================================== */
+
+.crazy-footer {
+  position: relative;
+
+  width: 100%;
+  min-height: 760px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07132f 0%,
+      #173d78 25%,
+      #694e99 53%,
+      #d86b73 72%,
+      #f49a54 100%
+    );
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   SKY
+===================================================== */
+
+.footer-sky {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   SUN
+===================================================== */
+
+.footer-sun {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  top: 40px;
+  right: 12%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff1a8 0%,
+      #ffd36a 18%,
+      #ff9d64 38%,
+      rgba(255, 130, 100, 0.35) 55%,
+      transparent 72%
+    );
+
+  filter: blur(5px);
+
+  animation:
+    sunFloat 7s ease-in-out infinite;
+}
+
+
+@keyframes sunFloat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.footer-stars {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+
+.footer-stars span {
+  position: absolute;
+
+  font-size: 13px;
+
+  color: rgba(255,255,255,0.8);
+
+  animation:
+    starBlink 3s ease-in-out infinite;
+}
+
+
+.footer-stars span:nth-child(1) {
+  top: 70px;
+  left: 15%;
+}
+
+.footer-stars span:nth-child(2) {
+  top: 125px;
+  left: 34%;
+
+  animation-delay: 1s;
+}
+
+.footer-stars span:nth-child(3) {
+  top: 55px;
+  left: 55%;
+
+  animation-delay: 1.8s;
+}
+
+.footer-stars span:nth-child(4) {
+  top: 190px;
+  right: 20%;
+
+  animation-delay: .5s;
+}
+
+.footer-stars span:nth-child(5) {
+  top: 100px;
+  right: 35%;
+
+  animation-delay: 2s;
+}
+
+.footer-stars span:nth-child(6) {
+  top: 230px;
+  left: 8%;
+
+  animation-delay: 1.2s;
+}
+
+
+@keyframes starBlink {
+
+  0%,
+  100% {
+    opacity: .2;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.footer-cloud {
+  position: absolute;
+
+  width: 260px;
+  height: 65px;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255,255,255,.18);
+
+  filter: blur(4px);
+}
+
+
+.footer-cloud::before,
+.footer-cloud::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: inherit;
+}
+
+
+.footer-cloud::before {
+  width: 100px;
+  height: 100px;
+
+  left: 35px;
+  bottom: 15px;
+}
+
+
+.footer-cloud::after {
+  width: 130px;
+  height: 130px;
+
+  right: 25px;
+  bottom: 3px;
+}
+
+
+/* CLOUD 1 */
+
+.footer-cloud-1 {
+  top: 90px;
+  left: -300px;
+
+  animation:
+    cloudMove1 32s linear infinite;
+}
+
+
+/* CLOUD 2 */
+
+.footer-cloud-2 {
+  top: 210px;
+  right: -320px;
+
+  transform: scale(.7);
+
+  opacity: .45;
+
+  animation:
+    cloudMove2 40s linear infinite;
+}
+
+
+/* CLOUD 3 */
+
+.footer-cloud-3 {
+  top: 320px;
+  left: -400px;
+
+  transform: scale(.5);
+
+  opacity: .25;
+
+  animation:
+    cloudMove3 50s linear infinite;
+}
+
+
+@keyframes cloudMove1 {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(1600px);
+  }
+
+}
+
+
+@keyframes cloudMove2 {
+
+  from {
+    transform: translateX(0) scale(.7);
+  }
+
+  to {
+    transform: translateX(-1600px) scale(.7);
+  }
+
+}
+
+
+@keyframes cloudMove3 {
+
+  from {
+    transform: translateX(0) scale(.5);
+  }
+
+  to {
+    transform: translateX(1600px) scale(.5);
+  }
+
+}
+
+
+/* =====================================================
+   PLANE
+===================================================== */
+
+.footer-plane {
+  position: absolute;
+
+  top: 125px;
+  left: -120px;
+
+  z-index: 3;
+
+  font-size: 46px;
+
+  color: #ffffff;
+
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,.8))
+    drop-shadow(0 12px 20px rgba(10,20,70,.4));
+
+  animation:
+    planeTravel 14s linear infinite;
+}
+
+
+@keyframes planeTravel {
+
+  0% {
+    transform:
+      translate(-100px, 50px)
+      rotate(-3deg);
+  }
+
+  20% {
+    transform:
+      translate(20vw, 5px)
+      rotate(-1deg);
+  }
+
+  45% {
+    transform:
+      translate(45vw, -35px)
+      rotate(2deg);
+  }
+
+  70% {
+    transform:
+      translate(70vw, -5px)
+      rotate(-1deg);
+  }
+
+  100% {
+    transform:
+      translate(120vw, 30px)
+      rotate(4deg);
+  }
+
+}
+
+
+/* =====================================================
+   PLANE TRAIL
+===================================================== */
+
+.plane-trail {
+  position: absolute;
+
+  top: 190px;
+  left: 0;
+
+  width: 45%;
+
+  height: 1px;
+
+  border-top:
+    1px dashed rgba(255,255,255,.25);
+
+  transform:
+    rotate(-6deg);
+
+  transform-origin: left;
+
+  animation:
+    trailMove 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes trailMove {
+
+  from {
+    opacity: .15;
+  }
+
+  to {
+    opacity: .5;
+  }
+
+}
+
+
+/* =====================================================
+   MOUNTAINS
+===================================================== */
+
+.footer-mountains {
+  position: absolute;
+
+  bottom: 175px;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  z-index: 1;
+}
+
+
+.mountain {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 190px solid rgba(22,28,70,.45);
+}
+
+
+.mountain-1 {
+  left: -100px;
+}
+
+
+.mountain-2 {
+  left: 28%;
+
+  transform: scale(1.3);
+
+  opacity: .6;
+}
+
+
+.mountain-3 {
+  right: -100px;
+
+  transform: scale(.8);
+
+  opacity: .5;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.crazy-footer-content {
+  position: relative;
+
+  z-index: 10;
+
+  min-height: 580px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    80px 30px 180px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.footer-eyebrow {
+  margin: 0 0 20px;
+
+  font-size: 8px;
+
+  letter-spacing: .5em;
+
+  color: rgba(255,255,255,.7);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.footer-logo-wrap {
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    transform .4s ease;
+}
+
+
+.footer-logo-wrap:hover {
+  transform:
+    translateY(-10px)
+    rotate(-3deg);
+}
+
+
+.footer-logo-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 130px;
+  height: 130px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,215,90,.5),
+      transparent 70%
+    );
+
+  filter: blur(12px);
+
+  opacity: .6;
+}
+
+
+.footer-logo {
+  position: relative;
+
+  z-index: 2;
+
+  width: 110px;
+
+  height: auto;
+
+  display: block;
+
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(
+      0 0 15px rgba(255,255,255,.35)
+    );
+
+  transition:
+    filter .3s ease;
+}
+
+
+.footer-logo-wrap:hover .footer-logo {
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(
+      0 0 25px rgba(255,215,90,.8)
+    );
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.footer-message {
+  margin: 22px 0 0;
+
+  min-height: 18px;
+
+  font-size: 10px;
+
+  letter-spacing: .12em;
+
+  color: rgba(255,255,255,.9);
+}
+
+
+/* =====================================================
+   TAGLINE
+===================================================== */
+
+.footer-tagline {
+  margin: 32px 0 0;
+
+  font-size: 7px;
+
+  letter-spacing: .35em;
+
+  color: rgba(255,255,255,.65);
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.crazy-footer-nav {
+  display: flex;
+
+  gap: 42px;
+
+  margin-top: 30px;
+}
+
+
+.crazy-footer-nav a {
+  position: relative;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 8px;
+
+  letter-spacing: .18em;
+
+  transition:
+    transform .25s ease,
+    color .25s ease;
+}
+
+
+.crazy-footer-nav a:hover {
+  color: #ffd75a;
+
+  transform:
+    translateY(-3px);
+}
+
+
+.crazy-footer-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #ffd75a;
+
+  transition:
+    width .3s ease;
+}
+
+
+.crazy-footer-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.crazy-social {
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+
+.crazy-social a {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255,255,255,.7);
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+
+.crazy-social a:hover {
+  color: #ffd75a;
+
+  transform:
+    translateY(-4px)
+    rotate(5deg);
+}
+
+
+.crazy-social svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.6;
+}
+
+
+/* =====================================================
+   ROAD
+===================================================== */
+
+.footer-road {
+  position: absolute;
+
+  left: 0;
+  bottom: 100px;
+
+  width: 100%;
+  height: 70px;
+
+  z-index: 6;
+
+  background:
+    #181b2b;
+
+  transform:
+    skewY(-2deg);
+}
+
+
+.road-line {
+  position: absolute;
+
+  top: 34px;
+  left: 0;
+
+  width: 100%;
+
+  border-top:
+    3px dashed #f4d35e;
+
+  opacity: .7;
+}
+
+
+/* =====================================================
+   CAR
+===================================================== */
+
+.footer-car {
+  position: absolute;
+
+  left: -100px;
+  top: 8px;
+
+  font-size: 35px;
+
+  filter:
+    drop-shadow(
+      0 5px 8px rgba(0,0,0,.35)
+    );
+
+  animation:
+    carDrive 11s linear infinite;
+}
+
+
+@keyframes carDrive {
+
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: calc(100% + 100px);
+  }
+
+}
+
+
+/* =====================================================
+   OCEAN
+===================================================== */
+
+.footer-ocean {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 115px;
+
+  z-index: 7;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #176b91,
+      #0b496e
+    );
+}
+
+
+/* =====================================================
+   WAVES
+===================================================== */
+
+.wave {
+  position: absolute;
+
+  left: -10%;
+
+  width: 120%;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  border-top:
+    2px solid rgba(255,255,255,.45);
+}
+
+
+.wave-1 {
+  top: 12px;
+
+  animation:
+    waveMove 5s ease-in-out infinite alternate;
+}
+
+
+.wave-2 {
+  top: 40px;
+
+  opacity: .55;
+
+  animation:
+    waveMove 7s ease-in-out infinite alternate-reverse;
+}
+
+
+.wave-3 {
+  top: 70px;
+
+  opacity: .35;
+
+  animation:
+    waveMove 9s ease-in-out infinite alternate;
+}
+
+
+@keyframes waveMove {
+
+  from {
+    transform:
+      translateX(-25px)
+      scaleY(.8);
+  }
+
+  to {
+    transform:
+      translateX(25px)
+      scaleY(1.1);
+  }
+
+}
+
+
+/* =====================================================
+   BOAT
+===================================================== */
+
+.footer-boat {
+  position: absolute;
+
+  top: 15px;
+  left: -100px;
+
+  font-size: 38px;
+
+  animation:
+    boatTravel 17s linear infinite;
+}
+
+
+@keyframes boatTravel {
+
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: calc(100% + 100px);
+  }
+
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.crazy-footer-bottom {
+  position: absolute;
+
+  z-index: 20;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding:
+    14px 7vw;
+
+  box-sizing: border-box;
+
+  color:
+    rgba(255,255,255,.65);
+
+  font-size: 6px;
+
+  letter-spacing: .18em;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .crazy-footer {
+    min-height: 700px;
+  }
+
+
+  .crazy-footer-content {
+    min-height: 530px;
+
+    padding:
+      70px 20px 170px;
+  }
+
+
+  .footer-sun {
+    width: 230px;
+    height: 230px;
+
+    right: -30px;
+  }
+
+
+  .footer-plane {
+    font-size: 32px;
+
+    top: 110px;
+  }
+
+
+  .footer-logo {
+    width: 95px;
+  }
+
+
+  .footer-tagline {
+    font-size: 6px;
+
+    letter-spacing: .22em;
+
+    max-width: 280px;
+
+    line-height: 1.8;
+  }
+
+
+  .crazy-footer-nav {
+    gap: 22px;
+
+    max-width: 280px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+
+  .crazy-footer-nav a {
+    font-size: 7px;
+  }
+
+
+  .footer-road {
+    bottom: 95px;
+  }
+
+
+  .footer-ocean {
+    height: 105px;
+  }
+
+
+  .crazy-footer-bottom {
+    padding:
+      14px 20px;
+
+    font-size: 5px;
+  }
+
+}

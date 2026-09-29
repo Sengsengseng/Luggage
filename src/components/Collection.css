@@ -1,0 +1,481 @@
+/* =========================
+   COLLECTION
+========================= */
+
+.collection {
+  width: 100%;
+  padding: 120px 6vw 140px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.collection-intro {
+  text-align: center;
+
+  margin-bottom: 65px;
+}
+
+.collection-eyebrow {
+  margin: 0 0 20px;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  color: #888;
+}
+
+.collection-intro h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 4.5vw, 64px);
+
+  font-weight: 600;
+
+  letter-spacing: 8px;
+
+  line-height: 1;
+
+  color: #111;
+}
+
+.collection-line {
+  width: 40px;
+  height: 1px;
+
+  margin: 30px auto;
+
+  background: #111;
+}
+
+.collection-subtitle {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #777;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.collection-grid {
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.collection-card {
+  text-align: center;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.collection-image {
+  position: relative;
+
+  width: 100%;
+  height: 540px;
+
+  overflow: hidden;
+
+  background: #f5f5f5;
+}
+
+.collection-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.4s ease;
+}
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.collection-card:hover .collection-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================
+   HOVER LABEL
+========================= */
+
+.collection-hover {
+  position: absolute;
+
+  left: 50%;
+  bottom: 25px;
+
+  transform: translate(-50%, 10px);
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 18px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #111;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.collection-hover span {
+  font-size: 14px;
+}
+
+.collection-card:hover .collection-hover {
+  opacity: 1;
+
+  transform: translate(-50%, 0);
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.collection-info {
+  padding-top: 25px;
+}
+
+.collection-info h3 {
+  margin: 0;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  color: #111;
+}
+
+.collection-info p {
+  margin: 11px 0 0;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  letter-spacing: 2.5px;
+
+  color: #888;
+}
+
+
+/* =========================
+   COLOR DOTS
+========================= */
+
+.color-dots {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #b5b5b5;
+
+  opacity: 0.6;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    border 0.25s ease;
+}
+
+
+/* ACTIVE COLOR */
+
+.dot.active {
+  width: 16px;
+  height: 16px;
+
+  opacity: 1;
+
+  border: 1.5px solid #111;
+
+  transform: scale(1.05);
+}
+
+
+/* COLOR OPTIONS */
+
+.dot-black {
+  background: #151515;
+}
+
+.dot-grey {
+  background: #9a9a9a;
+}
+
+.dot-pink {
+  background: #e7bbb7;
+}
+
+
+/* =========================
+   COLLECTION STATEMENT
+========================= */
+
+.collection-statement {
+  text-align: center;
+
+  margin-top: 120px;
+}
+
+.collection-statement h3 {
+  margin: 0;
+
+  font-size: clamp(24px, 3vw, 38px);
+
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  line-height: 1.2;
+
+  color: #111;
+}
+
+.collection-statement p {
+  margin: 18px 0 0;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #888;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .collection {
+    padding: 100px 4vw 120px;
+  }
+
+  .collection-grid {
+    gap: 18px;
+  }
+
+  .collection-image {
+    height: 460px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .collection {
+    padding: 80px 20px 100px;
+  }
+
+
+  /* INTRO */
+
+  .collection-intro {
+    margin-bottom: 50px;
+  }
+
+  .collection-eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+  }
+
+  .collection-intro h2 {
+    font-size: 32px;
+
+    letter-spacing: 5px;
+
+    line-height: 1.15;
+  }
+
+  .collection-line {
+    margin: 24px auto;
+  }
+
+  .collection-subtitle {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+
+  /* GRID */
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+
+  /* IMAGE */
+
+  .collection-image {
+    height: 520px;
+  }
+
+
+  /* INFO */
+
+  .collection-info {
+    padding-top: 22px;
+  }
+
+  .collection-info h3 {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+  }
+
+  .collection-info p {
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  /* COLOR DOTS */
+
+  .color-dots {
+    gap: 12px;
+
+    margin-top: 16px;
+  }
+
+  .dot {
+    width: 13px;
+    height: 13px;
+  }
+
+  .dot.active {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  /* HOVER */
+
+  .collection-hover {
+    display: none;
+  }
+
+
+  /* STATEMENT */
+
+  .collection-statement {
+    margin-top: 90px;
+  }
+
+  .collection-statement h3 {
+    font-size: 24px;
+
+    letter-spacing: 3px;
+  }
+
+  .collection-statement p {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .collection {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .collection-intro h2 {
+    font-size: 27px;
+
+    letter-spacing: 4px;
+  }
+
+  .collection-image {
+    height: 460px;
+  }
+
+}
