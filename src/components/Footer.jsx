@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Footer.css";
 
+const base = import.meta.env.BASE_URL;
+
 function Footer() {
   const [message, setMessage] = useState("Nice to meet you.");
 
@@ -78,7 +80,7 @@ function Footer() {
           <div className="footer-logo-glow"></div>
 
           <img
-            src="/eastside-logo.png"
+            src={`${base}eastside-logo.png`}
             alt="Eastside"
             className="footer-logo"
           />
@@ -149,7 +151,13 @@ function Footer() {
                 height="18"
                 rx="5"
               />
-              <circle cx="12" cy="12" r="4" />
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              />
+
               <circle
                 cx="17.5"
                 cy="6.5"
@@ -159,6 +167,7 @@ function Footer() {
               />
             </svg>
           </a>
+
 
           <a href="#" aria-label="TikTok">
             <svg viewBox="0 0 24 24">

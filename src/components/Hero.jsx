@@ -1,5 +1,7 @@
 import "./Hero.css";
 
+const base = import.meta.env.BASE_URL;
+
 function Hero() {
     return (
         <section className="hero">
@@ -12,35 +14,35 @@ function Hero() {
 
                 {/* Main luggage */}
                 <img
-                    src="/luggage.png"
+                    src={`${base}luggage.png`}
                     alt="EASTSIDE luggage"
                     className="hero-luggage"
                 />
 
                 {/* Running character */}
                 <img
-                    src="/images/suitcase-run.png"
+                    src={`${base}images/suitcase-run.png`}
                     alt=""
                     className="travel-character character-run"
                 />
 
                 {/* Dancing / shaking character */}
                 <img
-                    src="/images/suitcase-shake.png"
+                    src={`${base}images/suitcase-shake.png`}
                     alt=""
                     className="travel-character character-shake"
                 />
 
                 {/* Pointing character */}
                 <img
-                    src="/images/suitcase-point.png"
+                    src={`${base}images/suitcase-point.png`}
                     alt=""
                     className="travel-character character-point"
                 />
 
                 {/* Celebrating character */}
                 <img
-                    src="/images/suitcase-pose.png"
+                    src={`${base}images/suitcase-pose.png`}
                     alt=""
                     className="travel-character character-pose"
                 />
@@ -79,7 +81,7 @@ function Hero() {
                 </div>
 
                 <img
-                    src="/eastside-logo.png"
+                    src={`${base}eastside-logo.png`}
                     alt="EASTSIDE mascot"
                     className="hero-mascot"
                 />
