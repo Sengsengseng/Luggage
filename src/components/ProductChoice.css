@@ -1,0 +1,364 @@
+/* =========================
+   PRODUCT CHOICE
+========================= */
+
+.product-choice {
+  position: relative;
+
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    Let the image keep its natural aspect ratio.
+    This prevents the man, legs and luggage
+    from being cropped.
+  */
+  height: auto;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #f7f5ef;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-choice-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+    Show the COMPLETE image.
+  */
+  object-fit: contain;
+  object-position: center center;
+
+  transform: none;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.product-choice-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+
+  width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.product-choice-eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 0 0 9px;
+
+  color: #111111;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+.product-choice-eyebrow::before,
+.product-choice-eyebrow::after {
+  content: "";
+
+  display: block;
+
+  width: 36px;
+  height: 1px;
+
+  background: #a99d8d;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.product-choice-title {
+  margin: 0;
+
+  color: #080808;
+
+  font-size: clamp(25px, 2.3vw, 38px);
+
+  line-height: 0.95;
+
+  font-weight: 950;
+
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.product-choice-description {
+  margin: 10px 0 16px;
+
+  color: #53677a;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.product-choice-button {
+  pointer-events: auto;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  min-width: 205px;
+
+  padding: 13px 22px;
+
+  border: 1px solid #111111;
+  border-radius: 999px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.product-choice-button span {
+  font-size: 14px;
+
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+}
+
+.product-choice-button:hover {
+  background: #ffffff;
+
+  color: #111111;
+
+  transform: translateY(-2px);
+}
+
+.product-choice-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.product-choice::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .product-choice-content {
+    width: 450px;
+  }
+
+  .product-choice-title {
+    font-size: 30px;
+  }
+
+  .product-choice-description {
+    font-size: 9.5px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .product-choice-content {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .product-choice-eyebrow {
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    font-size: 7px;
+  }
+
+  .product-choice-eyebrow::before,
+  .product-choice-eyebrow::after {
+    width: 22px;
+  }
+
+  .product-choice-title {
+    font-size: 24px;
+
+    line-height: 0.95;
+  }
+
+  .product-choice-description {
+    margin: 8px 0 13px;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+  }
+
+  .product-choice-button {
+    min-width: 175px;
+
+    padding: 11px 17px;
+
+    gap: 12px;
+
+    font-size: 8px;
+  }
+
+  .product-choice-button span {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+  .product-choice-content {
+    width: 92%;
+  }
+
+  .product-choice-eyebrow {
+    font-size: 6.5px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .product-choice-title {
+    font-size: 21px;
+  }
+
+  .product-choice-description {
+    font-size: 8px;
+
+    margin: 7px 0 11px;
+  }
+
+  .product-choice-button {
+    min-width: 160px;
+
+    padding: 10px 15px;
+
+    font-size: 7px;
+
+    gap: 10px;
+  }
+
+  .product-choice-button span {
+    font-size: 11px;
+  }
+}

@@ -1,19 +1,416 @@
+/* =========================================================
+   EASTSIDE — BRAND STATEMENT
+========================================================= */
+
 .brand-statement {
   width: 100%;
-  padding: 30px 5vw 80px;
-  background: #ffffff;
+  padding: 0;
+
+  background: #f8f7f3;
+
   box-sizing: border-box;
+
   overflow: hidden;
 }
 
-.brand-statement-image {
+
+/* =========================================================
+   MAIN STORY
+========================================================= */
+
+.brand-story {
   width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    0.75fr
+    0.95fr;
+
+  min-height: 320px;
 }
 
-.brand-statement-image img {
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+.brand-story-image {
   width: 100%;
-  height: auto;
+  height: 320px;
+
+  overflow: hidden;
+}
+
+.brand-story-image img {
+  width: 100%;
+  height: 100%;
+
   display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.brand-story-image:hover img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.brand-story-content {
+  position: relative;
+
+  padding: 38px 42px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  background: #f8f7f3;
+
+  overflow: hidden;
+}
+
+.brand-story-eyebrow {
+  margin-bottom: 8px;
+
+  color: #77736e;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.28em;
+}
+
+.brand-story-content h2 {
+  margin: 0 0 10px;
+
+  color: #111111;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.025em;
+}
+
+.brand-story-content p {
+  max-width: 250px;
+
+  margin: 0 0 18px;
+
+  color: #6f6c68;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.brand-story-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 16px;
+
+  color: #ffffff;
+
+  background: #111111;
+
+  text-decoration: none;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.brand-story-button span {
+  font-size: 12px;
+
+  line-height: 1;
+}
+
+.brand-story-button:hover {
+  background: #2a2a2a;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   POSTCARD STAMP
+========================================================= */
+
+.brand-story-stamp {
+  position: absolute;
+
+  right: 18px;
+  bottom: 24px;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid rgba(190, 90, 90, 0.35);
+
+  border-radius: 50%;
+
+  color: rgba(180, 90, 90, 0.55);
+
+  font-size: 6px;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.14em;
+
+  transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.brand-statement-bottom {
+  width: 100%;
+
+  min-height: 92px;
+
+  display: grid;
+
+  grid-template-columns: 1.35fr 1fr;
+
+  align-items: center;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.brand-statement-copy {
+  padding: 18px 6vw;
+
+  box-sizing: border-box;
+}
+
+.brand-statement-copy h3 {
+  margin: 0 0 5px;
+
+  color: #171717;
+
+  font-size: 13px;
+
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  letter-spacing: 0.035em;
+}
+
+.brand-statement-copy p {
+  max-width: 610px;
+
+  margin: 0;
+
+  color: #77736e;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.brand-benefits {
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.brand-benefit {
+  min-height: 76px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border-left: 1px solid rgba(0, 0, 0, 0.10);
+
+  transition: background 0.25s ease;
+}
+
+.brand-benefit:hover {
+  background: #ffffff;
+}
+
+.brand-benefit-icon {
+  color: #111111;
+
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+.brand-benefit span {
+  color: #222222;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .brand-story {
+    grid-template-columns: 1fr 0.8fr 1fr;
+  }
+
+  .brand-story-content {
+    padding: 30px;
+  }
+
+  .brand-story-content h2 {
+    font-size: 23px;
+  }
+
+  .brand-story-content p {
+    font-size: 9px;
+  }
+
+  .brand-statement-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-statement-copy {
+    padding-bottom: 15px;
+  }
+
+  .brand-benefits {
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .brand-story {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-story-image {
+    height: 220px;
+  }
+
+  .brand-story-content {
+    min-height: 260px;
+
+    padding: 35px 25px;
+  }
+
+  .brand-story-content h2 {
+    font-size: 25px;
+  }
+
+  .brand-story-content p {
+    max-width: 280px;
+    font-size: 10px;
+  }
+
+  .brand-story-stamp {
+    right: 25px;
+    bottom: 28px;
+  }
+
+  .brand-story-image:last-child {
+    display: block;
+  }
+
+  .brand-statement-copy {
+    padding: 25px 20px;
+  }
+
+  .brand-statement-copy h3 {
+    font-size: 12px;
+  }
+
+  .brand-statement-copy p {
+    font-size: 9px;
+  }
+
+  .brand-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .brand-benefit {
+    min-height: 72px;
+  }
+
+  .brand-benefit-icon {
+    font-size: 14px;
+  }
+
+  .brand-benefit span {
+    font-size: 6px;
+  }
 }

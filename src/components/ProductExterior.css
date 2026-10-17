@@ -1,0 +1,378 @@
+/* =========================
+   PRODUCT EXTERIOR
+========================= */
+
+.product-exterior {
+  width: 100%;
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  background: #f8f6f0;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT — LUGGAGE
+========================= */
+
+.product-exterior-visual {
+  position: relative;
+
+  width: 100%;
+  height: 560px;
+
+  overflow: hidden;
+
+  background: #f8f6f0;
+}
+
+.product-exterior-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: left center;
+
+  transform: scale(1.02);
+
+  transition: transform 0.5s ease;
+}
+
+.product-exterior-visual:hover .product-exterior-image {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   RIGHT — CONTENT
+========================= */
+
+.product-exterior-content {
+  width: 100%;
+  min-height: 560px;
+
+  padding: 75px 6vw 65px 3vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.product-exterior-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 24px;
+
+  color: #5f6e78;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+}
+
+.product-exterior-eyebrow span {
+  display: block;
+
+  width: 42px;
+  height: 1px;
+
+  background: #b8aa96;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.product-exterior-heading h2 {
+  margin: 0;
+
+  color: #080808;
+
+  font-size: clamp(40px, 4vw, 66px);
+  line-height: 0.91;
+
+  font-weight: 950;
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+.product-exterior-heading p {
+  max-width: 620px;
+
+  margin: 27px 0 0;
+
+  color: #53677a;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.product-exterior-details {
+  width: 100%;
+
+  margin-top: 42px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #d4cbbd;
+  border-bottom: 1px solid #d4cbbd;
+}
+
+
+/* =========================
+   DETAIL CARD
+========================= */
+
+.product-exterior-detail {
+  min-height: 145px;
+
+  padding: 25px 14px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  border-right: 1px solid #d4cbbd;
+}
+
+.product-exterior-detail:last-child {
+  border-right: none;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.product-exterior-icon {
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.product-exterior-detail:hover .product-exterior-icon {
+  color: #a71925;
+  transform: translateY(-3px) scale(1.08);
+}
+
+
+/* Wheel icon */
+
+.product-exterior-detail:first-child
+.product-exterior-icon svg {
+  padding: 5px;
+
+  border: 2px solid #111;
+
+  border-radius: 50%;
+}
+
+
+/* =========================
+   DETAIL TITLE
+========================= */
+
+.product-exterior-detail h3 {
+  margin: 0 0 8px;
+
+  color: #111;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 900;
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   DETAIL DESCRIPTION
+========================= */
+
+.product-exterior-detail p {
+  margin: 0;
+
+  color: #77736e;
+
+  font-size: 9.5px;
+  line-height: 1.5;
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .product-exterior {
+    grid-template-columns: 40% 60%;
+  }
+
+  .product-exterior-visual,
+  .product-exterior-content {
+    min-height: 520px;
+  }
+
+  .product-exterior-visual {
+    height: 520px;
+  }
+
+  .product-exterior-content {
+    padding: 60px 4vw 55px 3vw;
+  }
+
+  .product-exterior-heading h2 {
+    font-size: clamp(36px, 5vw, 55px);
+  }
+
+  .product-exterior-heading p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .product-exterior {
+    display: block;
+  }
+
+  .product-exterior-visual {
+    width: 100%;
+    height: 360px;
+  }
+
+  .product-exterior-image {
+    object-position: left center;
+  }
+
+  .product-exterior-content {
+    min-height: auto;
+
+    padding: 55px 22px 55px;
+  }
+
+  .product-exterior-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 8px;
+  }
+
+  .product-exterior-heading h2 {
+    font-size: 42px;
+    line-height: 0.92;
+  }
+
+  .product-exterior-heading p {
+    margin-top: 22px;
+
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .product-exterior-details {
+    margin-top: 35px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .product-exterior-detail {
+    min-height: 125px;
+
+    padding: 22px 15px;
+
+    border-right: none;
+    border-bottom: 1px solid #d4cbbd;
+  }
+
+  .product-exterior-detail:last-child {
+    border-bottom: none;
+  }
+
+  .product-exterior-icon {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+  .product-exterior-visual {
+    height: 300px;
+  }
+
+  .product-exterior-content {
+    padding: 45px 18px;
+  }
+
+  .product-exterior-heading h2 {
+    font-size: 34px;
+  }
+
+}

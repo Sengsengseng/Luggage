@@ -1,5 +1,7 @@
 import "./Collection.css";
 
+const base = import.meta.env.BASE_URL;
+
 function Collection() {
   return (
     <section className="collection" id="collections">
@@ -37,7 +39,7 @@ function Collection() {
 
           <div className="collection-image">
             <img
-              src="/images/black-luggage.png"
+              src={`${base}images/black-luggage.png`}
               alt="EASTSIDE black 20-inch carry-on"
             />
 
@@ -71,7 +73,7 @@ function Collection() {
 
           <div className="collection-image">
             <img
-              src="/images/space-grey-luggage.png"
+              src={`${base}images/space-grey-luggage.png`}
               alt="EASTSIDE space grey 20-inch carry-on"
             />
 
@@ -105,7 +107,7 @@ function Collection() {
 
           <div className="collection-image">
             <img
-              src="/images/pink-luggage.png"
+              src={`${base}images/pink-luggage.png`}
               alt="EASTSIDE pink 20-inch carry-on"
             />
 

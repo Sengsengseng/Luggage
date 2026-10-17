@@ -1,1033 +1,711 @@
-/* =====================================================
-   EASTSIDE CRAZY TRAVEL FOOTER
-===================================================== */
+/* =========================================================
+   EASTSIDE — F1 / LUXURY FOOTER
+========================================================= */
 
-.crazy-footer {
+.luxury-footer {
   position: relative;
-
   width: 100%;
-  min-height: 760px;
 
-  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(255, 255, 255, 0.035),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #090909 0%,
+      #111111 50%,
+      #0b0b0b 100%
+    );
 
   color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP RACING LINE
+========================================================= */
+
+.footer-racing-line {
+  width: 100%;
+  height: 2px;
 
   background:
     linear-gradient(
-      180deg,
-      #07132f 0%,
-      #173d78 25%,
-      #694e99 53%,
-      #d86b73 72%,
-      #f49a54 100%
+      90deg,
+      #111111 0%,
+      #111111 30%,
+      #e10600 46%,
+      #ffffff 50%,
+      #e10600 54%,
+      #111111 70%,
+      #111111 100%
     );
+}
+
+
+/* =========================================================
+   SUBTLE F1 BACKGROUND
+========================================================= */
+
+.luxury-footer::before {
+  content: "";
+
+  position: absolute;
+
+  right: -100px;
+  top: 0;
+
+  width: 600px;
+  height: 100%;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 24px,
+      rgba(255, 255, 255, 0.025) 25px,
+      transparent 26px
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   RED SPEED LINE
+========================================================= */
+
+.luxury-footer::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 42px;
+
+  width: 180px;
+  height: 1px;
+
+  background: #e10600;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  min-height: 245px;
+
+  padding: 48px 4.8vw 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    1.8fr
+    0.7fr
+    0.7fr
+    0.7fr;
+
+  column-gap: 48px;
 
   box-sizing: border-box;
 }
 
 
-/* =====================================================
-   SKY
-===================================================== */
-
-.footer-sky {
-  position: absolute;
-
-  inset: 0;
-
-  overflow: hidden;
-
-  pointer-events: none;
-}
-
-
-/* =====================================================
-   SUN
-===================================================== */
-
-.footer-sun {
-  position: absolute;
-
-  width: 330px;
-  height: 330px;
-
-  top: 40px;
-  right: 12%;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      #fff1a8 0%,
-      #ffd36a 18%,
-      #ff9d64 38%,
-      rgba(255, 130, 100, 0.35) 55%,
-      transparent 72%
-    );
-
-  filter: blur(5px);
-
-  animation:
-    sunFloat 7s ease-in-out infinite;
-}
-
-
-@keyframes sunFloat {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
-
-}
-
-
-/* =====================================================
-   STARS
-===================================================== */
-
-.footer-stars {
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-}
-
-
-.footer-stars span {
-  position: absolute;
-
-  font-size: 13px;
-
-  color: rgba(255,255,255,0.8);
-
-  animation:
-    starBlink 3s ease-in-out infinite;
-}
-
-
-.footer-stars span:nth-child(1) {
-  top: 70px;
-  left: 15%;
-}
-
-.footer-stars span:nth-child(2) {
-  top: 125px;
-  left: 34%;
-
-  animation-delay: 1s;
-}
-
-.footer-stars span:nth-child(3) {
-  top: 55px;
-  left: 55%;
-
-  animation-delay: 1.8s;
-}
-
-.footer-stars span:nth-child(4) {
-  top: 190px;
-  right: 20%;
-
-  animation-delay: .5s;
-}
-
-.footer-stars span:nth-child(5) {
-  top: 100px;
-  right: 35%;
-
-  animation-delay: 2s;
-}
-
-.footer-stars span:nth-child(6) {
-  top: 230px;
-  left: 8%;
-
-  animation-delay: 1.2s;
-}
-
-
-@keyframes starBlink {
-
-  0%,
-  100% {
-    opacity: .2;
-    transform: scale(.8);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-
-}
-
-
-/* =====================================================
-   CLOUDS
-===================================================== */
-
-.footer-cloud {
-  position: absolute;
-
-  width: 260px;
-  height: 65px;
-
-  border-radius: 100px;
-
-  background:
-    rgba(255,255,255,.18);
-
-  filter: blur(4px);
-}
-
-
-.footer-cloud::before,
-.footer-cloud::after {
-  content: "";
-
-  position: absolute;
-
-  border-radius: 50%;
-
-  background: inherit;
-}
-
-
-.footer-cloud::before {
-  width: 100px;
-  height: 100px;
-
-  left: 35px;
-  bottom: 15px;
-}
-
-
-.footer-cloud::after {
-  width: 130px;
-  height: 130px;
-
-  right: 25px;
-  bottom: 3px;
-}
-
-
-/* CLOUD 1 */
-
-.footer-cloud-1 {
-  top: 90px;
-  left: -300px;
-
-  animation:
-    cloudMove1 32s linear infinite;
-}
-
-
-/* CLOUD 2 */
-
-.footer-cloud-2 {
-  top: 210px;
-  right: -320px;
-
-  transform: scale(.7);
-
-  opacity: .45;
-
-  animation:
-    cloudMove2 40s linear infinite;
-}
-
-
-/* CLOUD 3 */
-
-.footer-cloud-3 {
-  top: 320px;
-  left: -400px;
-
-  transform: scale(.5);
-
-  opacity: .25;
-
-  animation:
-    cloudMove3 50s linear infinite;
-}
-
-
-@keyframes cloudMove1 {
-
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(1600px);
-  }
-
-}
-
-
-@keyframes cloudMove2 {
-
-  from {
-    transform: translateX(0) scale(.7);
-  }
-
-  to {
-    transform: translateX(-1600px) scale(.7);
-  }
-
-}
-
-
-@keyframes cloudMove3 {
-
-  from {
-    transform: translateX(0) scale(.5);
-  }
-
-  to {
-    transform: translateX(1600px) scale(.5);
-  }
-
-}
-
-
-/* =====================================================
-   PLANE
-===================================================== */
-
-.footer-plane {
-  position: absolute;
-
-  top: 125px;
-  left: -120px;
-
-  z-index: 3;
-
-  font-size: 46px;
-
-  color: #ffffff;
-
-  filter:
-    drop-shadow(0 0 10px rgba(255,255,255,.8))
-    drop-shadow(0 12px 20px rgba(10,20,70,.4));
-
-  animation:
-    planeTravel 14s linear infinite;
-}
-
-
-@keyframes planeTravel {
-
-  0% {
-    transform:
-      translate(-100px, 50px)
-      rotate(-3deg);
-  }
-
-  20% {
-    transform:
-      translate(20vw, 5px)
-      rotate(-1deg);
-  }
-
-  45% {
-    transform:
-      translate(45vw, -35px)
-      rotate(2deg);
-  }
-
-  70% {
-    transform:
-      translate(70vw, -5px)
-      rotate(-1deg);
-  }
-
-  100% {
-    transform:
-      translate(120vw, 30px)
-      rotate(4deg);
-  }
-
-}
-
-
-/* =====================================================
-   PLANE TRAIL
-===================================================== */
-
-.plane-trail {
-  position: absolute;
-
-  top: 190px;
-  left: 0;
-
-  width: 45%;
-
-  height: 1px;
-
-  border-top:
-    1px dashed rgba(255,255,255,.25);
-
-  transform:
-    rotate(-6deg);
-
-  transform-origin: left;
-
-  animation:
-    trailMove 4s ease-in-out infinite alternate;
-}
-
-
-@keyframes trailMove {
-
-  from {
-    opacity: .15;
-  }
-
-  to {
-    opacity: .5;
-  }
-
-}
-
-
-/* =====================================================
-   MOUNTAINS
-===================================================== */
-
-.footer-mountains {
-  position: absolute;
-
-  bottom: 175px;
-  left: 0;
-
-  width: 100%;
-  height: 180px;
-
-  z-index: 1;
-}
-
-
-.mountain {
-  position: absolute;
-
-  bottom: 0;
-
-  width: 0;
-  height: 0;
-
-  border-left: 180px solid transparent;
-  border-right: 180px solid transparent;
-  border-bottom: 190px solid rgba(22,28,70,.45);
-}
-
-
-.mountain-1 {
-  left: -100px;
-}
-
-
-.mountain-2 {
-  left: 28%;
-
-  transform: scale(1.3);
-
-  opacity: .6;
-}
-
-
-.mountain-3 {
-  right: -100px;
-
-  transform: scale(.8);
-
-  opacity: .5;
-}
-
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.crazy-footer-content {
-  position: relative;
-
-  z-index: 10;
-
-  min-height: 580px;
-
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
   display: flex;
 
   flex-direction: column;
 
-  align-items: center;
-
-  justify-content: center;
-
-  padding:
-    80px 30px 180px;
-
-  box-sizing: border-box;
+  align-items: flex-start;
 }
 
 
-/* =====================================================
-   EYEBROW
-===================================================== */
+/* Red accent */
 
-.footer-eyebrow {
-  margin: 0 0 20px;
+.footer-brand::before {
+  content: "";
 
-  font-size: 8px;
+  width: 34px;
+  height: 2px;
 
-  letter-spacing: .5em;
+  margin-bottom: 18px;
 
-  color: rgba(255,255,255,.7);
+  background: #e10600;
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGO
-===================================================== */
-
-.footer-logo-wrap {
-  position: relative;
-
-  cursor: pointer;
-
-  transition:
-    transform .4s ease;
-}
-
-
-.footer-logo-wrap:hover {
-  transform:
-    translateY(-10px)
-    rotate(-3deg);
-}
-
-
-.footer-logo-glow {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 130px;
-  height: 130px;
-
-  transform:
-    translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,215,90,.5),
-      transparent 70%
-    );
-
-  filter: blur(12px);
-
-  opacity: .6;
-}
-
+========================================================= */
 
 .footer-logo {
-  position: relative;
+  display: flex;
+  align-items: center;
 
-  z-index: 2;
+  width: 220px;
+  height: 55px;
 
-  width: 110px;
-
-  height: auto;
-
-  display: block;
-
-  filter:
-    brightness(0)
-    invert(1)
-    drop-shadow(
-      0 0 15px rgba(255,255,255,.35)
-    );
+  overflow: hidden;
 
   transition:
-    filter .3s ease;
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-logo img {
+  display: block;
+
+  width: 220px;
+  height: auto;
+
+  max-width: none;
+
+  object-fit: contain;
+  object-position: left center;
+
+  /* white logo for black footer */
+  filter: brightness(0) invert(1);
+
+  mix-blend-mode: screen;
+}
+
+.footer-logo:hover {
+  opacity: 0.75;
+  transform: translateX(2px);
 }
 
 
-.footer-logo-wrap:hover .footer-logo {
-  filter:
-    brightness(0)
-    invert(1)
-    drop-shadow(
-      0 0 25px rgba(255,215,90,.8)
-    );
-}
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
 
+.footer-description {
+  margin: 12px 0 22px;
 
-/* =====================================================
-   MESSAGE
-===================================================== */
+  color: #b0b0b0;
 
-.footer-message {
-  margin: 22px 0 0;
-
-  min-height: 18px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   font-size: 10px;
 
-  letter-spacing: .12em;
+  font-weight: 500;
 
-  color: rgba(255,255,255,.9);
+  line-height: 1.5;
+
+  letter-spacing: 0.08em;
 }
 
 
-/* =====================================================
-   TAGLINE
-===================================================== */
+/* =========================================================
+   SOCIALS
+========================================================= */
 
-.footer-tagline {
-  margin: 32px 0 0;
-
-  font-size: 7px;
-
-  letter-spacing: .35em;
-
-  color: rgba(255,255,255,.65);
-
-  text-align: center;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.crazy-footer-nav {
+.footer-socials {
   display: flex;
 
-  gap: 42px;
+  align-items: center;
 
-  margin-top: 30px;
+  gap: 17px;
 }
 
 
-.crazy-footer-nav a {
-  position: relative;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 8px;
-
-  letter-spacing: .18em;
-
-  transition:
-    transform .25s ease,
-    color .25s ease;
-}
-
-
-.crazy-footer-nav a:hover {
-  color: #ffd75a;
-
-  transform:
-    translateY(-3px);
-}
-
-
-.crazy-footer-nav a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: #ffd75a;
-
-  transition:
-    width .3s ease;
-}
-
-
-.crazy-footer-nav a:hover::after {
-  width: 100%;
-}
-
-
-/* =====================================================
-   SOCIAL
-===================================================== */
-
-.crazy-social {
-  display: flex;
-
-  gap: 18px;
-
-  margin-top: 25px;
-}
-
-
-.crazy-social a {
-  width: 24px;
-  height: 24px;
+.footer-socials a {
+  width: 19px;
+  height: 19px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  color: rgba(255,255,255,.7);
+  color: #aaaaaa;
+
+  text-decoration: none;
 
   transition:
-    color .25s ease,
-    transform .25s ease;
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 
-.crazy-social a:hover {
-  color: #ffd75a;
-
-  transform:
-    translateY(-4px)
-    rotate(5deg);
-}
-
-
-.crazy-social svg {
-  width: 17px;
-  height: 17px;
+.footer-socials svg {
+  width: 16px;
+  height: 16px;
 
   fill: none;
 
   stroke: currentColor;
 
-  stroke-width: 1.6;
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
 }
 
 
-/* =====================================================
-   ROAD
-===================================================== */
+.footer-socials .social-dot {
+  fill: currentColor;
+  stroke: none;
+}
 
-.footer-road {
+
+.footer-socials a:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter {
+  position: relative;
+
+  padding-left: 42px;
+
+  border-left: 1px solid #363636;
+}
+
+
+/* Red vertical accent */
+
+.footer-newsletter::before {
+  content: "";
+
   position: absolute;
 
-  left: 0;
-  bottom: 100px;
+  left: -1px;
+  top: 0;
 
+  width: 2px;
+  height: 38px;
+
+  background: #e10600;
+}
+
+
+/* =========================================================
+   NEWSLETTER TITLE
+========================================================= */
+
+.footer-column-title {
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   NEWSLETTER BOX
+========================================================= */
+
+.footer-form {
   width: 100%;
-  height: 70px;
+  max-width: 450px;
 
-  z-index: 6;
-
-  background:
-    #181b2b;
-
-  transform:
-    skewY(-2deg);
-}
-
-
-.road-line {
-  position: absolute;
-
-  top: 34px;
-  left: 0;
-
-  width: 100%;
-
-  border-top:
-    3px dashed #f4d35e;
-
-  opacity: .7;
-}
-
-
-/* =====================================================
-   CAR
-===================================================== */
-
-.footer-car {
-  position: absolute;
-
-  left: -100px;
-  top: 8px;
-
-  font-size: 35px;
-
-  filter:
-    drop-shadow(
-      0 5px 8px rgba(0,0,0,.35)
-    );
-
-  animation:
-    carDrive 11s linear infinite;
-}
-
-
-@keyframes carDrive {
-
-  from {
-    left: -100px;
-  }
-
-  to {
-    left: calc(100% + 100px);
-  }
-
-}
-
-
-/* =====================================================
-   OCEAN
-===================================================== */
-
-.footer-ocean {
-  position: absolute;
-
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-
-  height: 115px;
-
-  z-index: 7;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #176b91,
-      #0b496e
-    );
-}
-
-
-/* =====================================================
-   WAVES
-===================================================== */
-
-.wave {
-  position: absolute;
-
-  left: -10%;
-
-  width: 120%;
-
-  height: 55px;
-
-  border-radius: 50%;
-
-  border-top:
-    2px solid rgba(255,255,255,.45);
-}
-
-
-.wave-1 {
-  top: 12px;
-
-  animation:
-    waveMove 5s ease-in-out infinite alternate;
-}
-
-
-.wave-2 {
-  top: 40px;
-
-  opacity: .55;
-
-  animation:
-    waveMove 7s ease-in-out infinite alternate-reverse;
-}
-
-
-.wave-3 {
-  top: 70px;
-
-  opacity: .35;
-
-  animation:
-    waveMove 9s ease-in-out infinite alternate;
-}
-
-
-@keyframes waveMove {
-
-  from {
-    transform:
-      translateX(-25px)
-      scaleY(.8);
-  }
-
-  to {
-    transform:
-      translateX(25px)
-      scaleY(1.1);
-  }
-
-}
-
-
-/* =====================================================
-   BOAT
-===================================================== */
-
-.footer-boat {
-  position: absolute;
-
-  top: 15px;
-  left: -100px;
-
-  font-size: 38px;
-
-  animation:
-    boatTravel 17s linear infinite;
-}
-
-
-@keyframes boatTravel {
-
-  from {
-    left: -100px;
-  }
-
-  to {
-    left: calc(100% + 100px);
-  }
-
-}
-
-
-/* =====================================================
-   BOTTOM
-===================================================== */
-
-.crazy-footer-bottom {
-  position: absolute;
-
-  z-index: 20;
-
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
+  height: 44px;
 
   display: flex;
 
-  justify-content: space-between;
+  border: 1px solid #555555;
 
-  padding:
-    14px 7vw;
+  background: #101010;
 
   box-sizing: border-box;
 
-  color:
-    rgba(255,255,255,.65);
-
-  font-size: 6px;
-
-  letter-spacing: .18em;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
-/* =====================================================
+.footer-form:hover {
+  border-color: #777777;
+}
+
+
+.footer-form:focus-within {
+  border-color: #999999;
+
+  background: #141414;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+========================================================= */
+
+.footer-form input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 0 15px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+}
+
+
+.footer-form input::placeholder {
+  color: #858585;
+}
+
+
+/* =========================================================
+   NEWSLETTER BUTTON
+========================================================= */
+
+.footer-form button {
+  width: 52px;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  border-left: 1px solid #555555;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.footer-form button:hover {
+  background: #e10600;
+
+  color: #ffffff;
+
+  border-color: #e10600;
+}
+
+
+/* =========================================================
+   NEWSLETTER NOTE
+========================================================= */
+
+.footer-form-note {
+  margin: 11px 0 0;
+
+  color: #707070;
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+/* Column heading */
+
+.footer-column h3 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* Links */
+
+.footer-column a {
+  margin-bottom: 10px;
+
+  color: #909090;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.07em;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.footer-column a:hover {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.footer-bottom {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 0 4.8vw;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #2c2c2c;
+
+  box-sizing: border-box;
+
+  color: #6f6f6f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+
+.footer-bottom span:nth-child(2) {
+  color: #9a9a9a;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .footer-main {
+    grid-template-columns:
+      1.2fr
+      1.5fr
+      0.7fr
+      0.7fr
+      0.7fr;
+
+    column-gap: 28px;
+
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+
+  .footer-newsletter {
+    padding-left: 25px;
+  }
+
+
+  .footer-logo,
+  .footer-logo img {
+    width: 175px;
+  }
+
+
+  .footer-form {
+    max-width: 330px;
+  }
+}
+
+
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
-  .crazy-footer {
-    min-height: 700px;
+  .footer-main {
+    min-height: auto;
+
+    padding: 42px 7vw 38px;
+
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 35px;
+
+    column-gap: 30px;
   }
 
 
-  .crazy-footer-content {
-    min-height: 530px;
-
-    padding:
-      70px 20px 170px;
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
 
-  .footer-sun {
-    width: 230px;
-    height: 230px;
+  .footer-newsletter {
+    grid-column: 1 / -1;
 
-    right: -30px;
+    padding-left: 0;
+
+    padding-top: 28px;
+
+    border-left: none;
+
+    border-top: 1px solid #363636;
   }
 
 
-  .footer-plane {
-    font-size: 32px;
+  .footer-newsletter::before {
+    left: 0;
+    top: -1px;
 
-    top: 110px;
+    width: 34px;
+    height: 2px;
   }
 
 
-  .footer-logo {
-    width: 95px;
+  .footer-form {
+    max-width: 100%;
   }
 
 
-  .footer-tagline {
-    font-size: 6px;
-
-    letter-spacing: .22em;
-
-    max-width: 280px;
-
-    line-height: 1.8;
+  .footer-column {
+    grid-column: span 1;
   }
 
 
-  .crazy-footer-nav {
-    gap: 22px;
+  .footer-bottom {
+    min-height: 54px;
 
-    max-width: 280px;
+    padding: 0 7vw;
 
     flex-wrap: wrap;
 
-    justify-content: center;
+    gap: 8px;
   }
 
 
-  .crazy-footer-nav a {
-    font-size: 7px;
+  .footer-bottom span:last-child {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .footer-main {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
 
-  .footer-road {
-    bottom: 95px;
+  .footer-logo,
+  .footer-logo img {
+    width: 155px;
   }
 
 
-  .footer-ocean {
-    height: 105px;
+  .footer-bottom {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
-
-
-  .crazy-footer-bottom {
-    padding:
-      14px 20px;
-
-    font-size: 5px;
-  }
-
 }

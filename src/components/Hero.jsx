@@ -1,118 +1,150 @@
+
+import { useEffect, useState } from "react";
 import "./Hero.css";
 
 const base = import.meta.env.BASE_URL;
 
+const slides = [
+  {
+    image: "images/hero-lifestyle.png",
+    alt: "Eastside luggage on a luxury travel escape",
+    title: (
+      <>
+        BUILT FOR
+        <br />
+        <span>YOUR JOURNEY.</span>
+      </>
+    ),
+  },
+  {
+    image: "images/suitcase-run.png",
+    alt: "Eastside luggage ready for the next adventure",
+    title: (
+      <>
+        READY.
+        <br />
+        <span>SET. GO.</span>
+      </>
+    ),
+  },
+  {
+    image: "images/suitcase-pose.png",
+    alt: "Eastside luggage with distinctive travel style",
+    title: (
+      <>
+        MAKE IT
+        <br />
+        <span>YOUR OWN.</span>
+      </>
+    ),
+  },
+];
+
 function Hero() {
-    return (
-        <section className="hero">
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-            {/* =========================
-                LEFT / CRAZY TRAVEL WORLD
-            ========================= */}
+  useEffect(() => {
+    if (isPaused) return undefined;
 
-            <div className="hero-left">
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 6000);
 
-                {/* Main luggage */}
-                <img
-                    src={`${base}luggage.png`}
-                    alt="EASTSIDE luggage"
-                    className="hero-luggage"
-                />
+    return () => window.clearInterval(timer);
+  }, [isPaused]);
 
-                {/* Running character */}
-                <img
-                    src={`${base}images/suitcase-run.png`}
-                    alt=""
-                    className="travel-character character-run"
-                />
+  const goToSlide = (index) => {
+    setActiveSlide((index + slides.length) % slides.length);
+  };
 
-                {/* Dancing / shaking character */}
-                <img
-                    src={`${base}images/suitcase-shake.png`}
-                    alt=""
-                    className="travel-character character-shake"
-                />
+  return (
+    <section
+      className="luxury-hero"
+      aria-label="Eastside featured collection"
+    >
+      <div className="hero-slides">
+        {slides.map((slide, index) => (
+          <div
+            className={`hero-slide ${
+              index === activeSlide ? "is-active" : ""
+            }`}
+            key={slide.image}
+            aria-hidden={index !== activeSlide}
+          >
+            <img
+              src={`${base}${slide.image}`}
+              alt={slide.alt}
+              className="hero-slide-image"
+              fetchPriority={index === 0 ? "high" : "auto"}
+            />
 
-                {/* Pointing character */}
-                <img
-                    src={`${base}images/suitcase-point.png`}
-                    alt=""
-                    className="travel-character character-point"
-                />
+            <div className="hero-slide-shade" />
+          </div>
+        ))}
+      </div>
 
-                {/* Celebrating character */}
-                <img
-                    src={`${base}images/suitcase-pose.png`}
-                    alt=""
-                    className="travel-character character-pose"
-                />
+      <div className="hero-content" key={activeSlide}>
+        <h1 className="hero-title">{slides[activeSlide].title}</h1>
 
-                {/* Plane */}
-                <div className="hero-plane">
-                    ✈
-                </div>
+        <div className="hero-actions">
+          <a href="#collections" className="hero-primary-button">
+            SHOP COLLECTION
+            <span aria-hidden="true">→</span>
+          </a>
 
-                {/* Flight path */}
-                <div className="flight-path"></div>
+          <a href="#about" className="hero-secondary-button">
+            MEET EASTY
+          </a>
+        </div>
+      </div>
 
-                {/* Decorative dots */}
-                <span className="travel-dot dot-blue"></span>
-                <span className="travel-dot dot-purple"></span>
-                <span className="travel-dot dot-pink"></span>
-                <span className="travel-dot dot-orange"></span>
+      <div className="hero-controls">
+        <button
+          type="button"
+          className="hero-pause"
+          onClick={() => setIsPaused((paused) => !paused)}
+          aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+          title={isPaused ? "Play slideshow" : "Pause slideshow"}
+        >
+          {isPaused ? "▶" : "Ⅱ"}
+        </button>
 
-                {/* Stars */}
-                <span className="travel-star star-one">✦</span>
-                <span className="travel-star star-two">✦</span>
-                <span className="travel-star star-three">✧</span>
+        <div className="hero-dots" aria-label="Choose slide">
+          {slides.map((slide, index) => (
+            <button
+              type="button"
+              key={slide.image}
+              className={`hero-dot ${
+                index === activeSlide ? "is-active" : ""
+              }`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === activeSlide ? "true" : undefined}
+            />
+          ))}
+        </div>
 
-            </div>
+        <button
+          type="button"
+          className="hero-arrow"
+          onClick={() => goToSlide(activeSlide - 1)}
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
 
-
-            {/* =========================
-                RIGHT / BRAND
-            ========================= */}
-
-            <div className="hero-right">
-
-                <div className="hero-meta">
-                    <span>EST. 2026</span>
-                    <span>DESIGNED TO MOVE</span>
-                </div>
-
-                <img
-                    src={`${base}eastside-logo.png`}
-                    alt="EASTSIDE mascot"
-                    className="hero-mascot"
-                />
-
-                <h1>
-                    EASTSIDE<span>.</span>
-                </h1>
-
-                <p className="hero-tagline">
-                    TRAVEL YOUR WAY
-                </p>
-
-                <div className="hero-divider"></div>
-
-                <p className="hero-description">
-                    LUGGAGE FOR A BOLDER TOMORROW
-                </p>
-
-                <a href="#customise" className="hero-button">
-                    SHOP ACCESSORIES
-                    <span>→</span>
-                </a>
-
-                <p className="hero-next">
-                    NEXT STOP <span>ANYWHERE</span>
-                </p>
-
-            </div>
-
-        </section>
-    );
+        <button
+          type="button"
+          className="hero-arrow"
+          onClick={() => goToSlide(activeSlide + 1)}
+          aria-label="Next slide"
+        >
+          →
+        </button>
+      </div>
+    </section>
+  );
 }
 
 export default Hero;
